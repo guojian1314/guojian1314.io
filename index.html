@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>江苏景点</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 1rem;
+            color: white;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            padding: 0 1rem;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .banner {
+            margin-top: 20px;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1200px;
+        }
+
+        .banner-slider {
+            display: flex;
+            width: 100%;
+        }
+
+        .banner-slide {
+            min-width: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .banner-slide img {
+            width: 100%;
+            //height: auto;
+            height: 650px;
+            display: block;
+        }
+
+        .banner-controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .banner-control {
+            cursor: pointer;
+            color: #fff;
+            font-size: 24px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .banner-indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .banner-indicator {
+            cursor: pointer;
+            width: 10px;
+            height: 10px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        .banner-indicator.active {
+            background-color: #fff;
+        }
+
+        .products {
+            margin-top: 20px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .product-item {
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .company-info {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .footer {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="logo">
+        <img src="./logio.jpg" alt="江苏旅游景点Logo">
+        <h1>江苏旅游景点</h1>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#">首页</a></li>
+        <li><a href="#" onclick="on()">景点</a></li>
+        <li><a href="#">关于我们</a></li>
+    </ul>
+</div>
+<section class="banner">
+    <div class="banner-slider" id="bannerSlider">
+        <div class="banner-slide"><img src="./12.jpg" alt="轮播图1"></div>
+        <div class="banner-slide"><img src="./13.jpg" alt="轮播图2"></div>
+        <div class="banner-slide"><img src="./14.jpg" alt="轮播图3"></div>
+        <!-- 更多轮播图 -->
+    </div>
+<!--    <div class="banner-controls">-->
+<!--        <div class="banner-control" id="prevSlide">&#10094;</div>-->
+<!--        <div class="banner-control" id="nextSlide">&#10095;</div>-->
+<!--    </div>-->
+    <div class="banner-indicators" id="bannerIndicators">
+        <div class="banner-indicator active"></div>
+        <div class="banner-indicator"></div>
+        <div class="banner-indicator"></div>
+        <!-- 更多指示器 -->
+    </div>
+</section>
+
+<section class="products">
+    <div class="product-item">
+        <img src="./5.jpg" alt="产品1">
+        <h3>景区展示</h3>
+        <p>景区名称</p>
+    </div>
+    <div class="product-item">
+        <img src="./6.jpg" alt="产品2">
+        <h3>渡江纪念胜利馆</h3>
+        <p>位于江苏省南京市鼓楼区渡江路1号</p>
+    </div>
+    <div class="product-item">
+        <img src="./5.jpg" alt="产品3">
+        <h3>景区展示</h3>
+        <p>景区名称</p>
+    </div>
+    <div class="product-item">
+        <img src="./5.jpg" alt="产品3">
+        <h3>景区展示</h3>
+        <p>景区名称</p>
+    </div>
+
+    <div class="product-item">
+        <img src="./5.jpg" alt="产品3">
+        <h3>景区展示</h3>
+        <p>景区名称</p>
+    </div>
+
+    <div class="product-item">
+        <img src="./5.jpg" alt="产品3">
+        <h3>景区展示</h3>
+        <p>景区名称</p>
+    </div>
+
+    <div class="product-item">
+        <img src="./5.jpg" alt="产品3">
+        <h3>景区展示</h3>
+        <p>景区名称</p>
+    </div>
+    <!-- 更多产品项 -->
+</section>
+<section class="company-info">
+    <h2>关于江苏</h2>
+    <p>从小桥流水的枕河人家，到烟波浩渺的太湖风光；从千古运河的漕运之声，到万里长江的奔流不息；从星罗棋布的大小湖泊，到一望无垠的绵延海岸线。江河湖海，造就水韵江苏“美的风光”。</p>
+
+    <p>江苏有文韵悠长的历史画卷，文物古迹、非遗产品、老字号、老品牌、传统村落等文化瑰宝遍布全省各地，现有世界文化遗产3处，人类非物质文化遗产代表作名录10项。文脉流长，书写江苏“美的人文”。</p>
+
+        <p>此地素有鱼米之乡、人间天堂之美誉，淮扬美食名列中国四大菜系，风格雅丽，刀工精细，追求本味，形质均美，一直是我国各类重大活动的首选佳肴。更有各具特色的地方菜系，“不时不食”的细致，人间烟火的慰藉，酝酿江苏“美的味道”。</p>
+
+    <p>江苏有千百种姿态，温婉江南和豪放江北，大江大河与小桥流水，如此差异却又如此和谐；江苏有无数闪亮的“声音”，各美其美而美美与共，人们居住、游览、休憩、生息、奋进其中，创造“美的生活”。</p>
+
+    <p>江苏还有1处世界自然遗产、25处5A级旅游景区、7个国家级旅游度假区，以及乡村旅游重点村（镇）、夜间文化和旅游消费集聚区……无论是哪一座城市、乡村、街巷、景致，相信都会给你留下难忘的记忆，让你收获“美的发现”。</p>
+
+    <p>即日起，我们将推出“水韵江苏”旅游地图“五美”系列H5，诚挚邀请朋友们到江苏走一走、看一看，感受美的风光、美的人文、美的味道、美的生活，收获美的发现。</p>
+
+    <p>水韵江苏，有你会更美！</p>
+    <p><strong>联系方式： 13165738753</strong></p>
+</section>
+<footer class="footer">
+    <p>版权所有 &copy; 2024 江南</p>
+    <p>联系方式: 2296587704@qq.com</p>
+</footer>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const slider = document.getElementById('bannerSlider');
+        const slides = slider.getElementsByClassName('banner-slide');
+        const indicators = document.getElementById('bannerIndicators').getElementsByTagName('div');
+        const prevButton = document.getElementById('prevSlide');
+        const nextButton = document.getElementById('nextSlide');
+        let index = 0;
+        let interval = setInterval(nextSlide, 5000);
+
+        function showSlide(i) {
+            index = i;
+            for (let slide of slides) {
+                slide.style.transform = `translateX(-${index * 100}%)`;
+            }
+            for (let indicator of indicators) {
+                indicator.classList.remove('active');
+            }
+            indicators[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            index++;
+            if (index >= slides.length) {
+                index = 0;
+            }
+            showSlide(index);
+        }
+
+        function prevSlide() {
+            index--;
+            if (index < 0) {
+                index = slides.length - 1;
+            }
+            showSlide(index);
+        }
+
+        // 点击指示器切换轮播图
+        for (let i = 0; i < indicators.length; i++) {
+            indicators[i].addEventListener('click', function () {
+                clearInterval(interval);
+                showSlide(i);
+                interval = setInterval(nextSlide, 5000);
+            });
+        }
+
+        // 点击上一张和下一张按钮切换轮播图
+        prevButton.addEventListener('click', function () {
+            clearInterval(interval);
+            prevSlide();
+            interval = setInterval(nextSlide, 5000);
+        });
+
+        nextButton.addEventListener('click', function () {
+            clearInterval(interval);
+            nextSlide();
+            interval = setInterval(nextSlide, 5000);
+        });
+
+        // 鼠标悬停在轮播图上时停止自动切换
+        slider.addEventListener('mouseover', function () {
+            clearInterval(interval);
+        });
+
+        // 鼠标离开轮播图时恢复自动切换
+        slider.addEventListener('mouseout', function () {
+            interval = setInterval(nextSlide, 5000);
+        });
+    });
+
+    function on() {
+        alert("不要再点了这是静态页面")
+    }
+
+</script>
+</html>
